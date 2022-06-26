@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <div class="pt-7 flex flex-col">
+    <div class="pt-7 flex flex-col max-w-fit">
         <p class="font-bold pb-1 text-center">💡 Tip of the Day</p>
-        <p class="text-center max-w-fit">{{((arr) => {return arr.at(new Date().getDate() % arr.length)})([
+        <p class="text-center">{{((arr) => {return arr.at(new Date().getDate() % arr.length)})([
             "Don't ration your water! If you're feeling dehydrated, or if you're starting to feel a headache, just drink some more!", 
             "If your water supplies are limited, stay away from alcohol! Alcohol dehydrates the body and you don't want that.", 
             "Before starting your trip, make sure to drink enough water so you stay hydrated for a longer period of time.", 

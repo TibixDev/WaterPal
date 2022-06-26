@@ -1,13 +1,13 @@
 <template>
     <div class="flex flex-col items-center justify-center min-h-screen mx-auto gap-10">
         <div class="flex flex-col">
-            <div class="flex flex-col sm:flex-row justify-center items-center mt-10 sm:mt-0">
+            <div class="flex flex-col sm:flex-row justify-center items-center pt-10 sm:mt-0">
                 <img class="w-20" src="../assets/waterpal.svg" alt="waterpal logo">
                 <h1 class="align-center font-extrabold font-sans antialiased text-5xl sm:text-7xl">WATERPAL</h1>
             </div>
             <h2 class="text-right italic">Never out of water</h2>
         </div>
-        <div class="border-solid rounded-md drop-shadow-md px-12 pt-10 pb-2 bg-white m-2 max-w-screen md:max-w-3xl justify-center">
+        <div class="border-solid rounded-md drop-shadow-md px-5 sm:px-12 pt-10 pb-2 bg-white m-2 max-w-screen md:max-w-3xl justify-center">
             <div class="flex flex-col items-center" v-if="!isDone">
                 <h1 class="text-center text-3xl font-bold pb-7">Enter your trip details</h1>
                 <div class="flex flex-col sm:flex-row gap-1 justify-center items-center">
@@ -23,7 +23,7 @@
                         people
                     </p>
                 </div>
-                <p class="pb-10">for a total of
+                <p class="mb-6">for a total of
                     <input
                         class="w-10 text-center border-2 rounded-md border-sky-500 focus:outline-none focus:border-sky-600" 
                         type="number"
