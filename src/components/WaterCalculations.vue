@@ -56,7 +56,7 @@
         <div class="flex flex-row flex-wrap mx-auto">
             <svg v-for="n, index in bottles" :key="index" class="w-16 h-16" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em" viewBox="0 0 24 24">
-                <path fill="#888888"
+                <path fill="#109BFF"
                     d="M15 11v9a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-9a2 2 0 0 1 .6-1.42C11.1 7.89 11 4 11 4h-1V2h4v2h-1s-.1 3.89 1.4 5.58A2 2 0 0 1 15 11Z">
                 </path>
             </svg>
@@ -72,6 +72,7 @@ const waterMenL = 3.7;
 const waterWomenL = 2.7;
 const waterAvg = (waterMenL + waterWomenL) / 2;
 const currentUnit = ref("liter");
+const bottleSizeL = 0.25;
 
 const props = defineProps({
     tripData: {
