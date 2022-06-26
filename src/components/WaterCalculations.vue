@@ -6,6 +6,8 @@
                 @click="$emit('back')"
             >Back</button>
         </div>
+
+        <!-- UNIT SELECTOR -->
         <fieldset>
             <legend class="text-2xl font-semibold pb-2">Change your unit:</legend>
 
@@ -27,6 +29,8 @@
             </div>
         </fieldset>
         <hr>
+
+        <!-- WATER DATA -->
         <h1 class="text-2xl font-bold">Water Data</h1>
         <p>
             In order to keep
@@ -44,8 +48,8 @@
             Each person has to roughly drink
             <span class="highlight">{{ convert(dailyWaterPerPerson) }}</span>
             every day. That's about
-            <span class="highlight">{{ (dailyWaterPerPerson / 0.25).toFixed(0) }} cups</span>
-            daily. (<span class="highlight">250ml</span>)
+            <span class="highlight">{{ (dailyWaterPerPerson / bottleSizeL).toFixed(0) }} cups</span>
+            daily. (<span class="highlight">{{ convert(cupSizeL) }} cup</span>)
         </p>
         <p>
             You will need
@@ -68,12 +72,15 @@
 // Imports
 import { ref } from "vue";
 
+// Constants
 const waterMenL = 3.7;
 const waterWomenL = 2.7;
 const waterAvg = (waterMenL + waterWomenL) / 2;
 const currentUnit = ref("liter");
 const bottleSizeL = 0.25;
+const cupSizeL = 0.25;
 
+// Props and emits
 const props = defineProps({
     tripData: {
         type: Object,
@@ -86,6 +93,7 @@ const props = defineProps({
 
 const emits = defineEmits(["back"])
 
+// Converters convert liter to other units
 const converters = {
     liter: (liter) => liter,
     gallon: (liter) => (liter * 0.26417),
@@ -101,11 +109,11 @@ function getWater(people, days) {
     return people * days * waterAvg;
 }
 
+// Data
 const waterQty = getWater(props.tripData.people, props.tripData.days);
 const waterPerPerson = waterQty / props.tripData.people;
 const dailyWaterPerPerson = (waterPerPerson / props.tripData.days).toFixed(2);
-const bottles = Math.round(waterQty / 2.5)
-console.log(bottles)
+const bottles = Math.round(waterQty / bottleSizeL);
 </script>
 
 <style scoped>
