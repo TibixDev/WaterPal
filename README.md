@@ -1,7 +1,23 @@
-# Vue 3 + Vite
+<div align="center">
+    <img src="./favicon.svg" width="125">
+    <h3>WaterPal</h3>
+    <p>Never out of water.</p>
+</div>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<br>
 
-## Recommended IDE Setup
+# The Goal of WaterPal
+We aim to help People in need calculate how much water they need for a trip.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+### Features
+- Prompt that takes in what kind of vacation you’re going to, with how many people
+- Output how much water you will need, as a total and per person as well
+- How much should you drink ideally
+- How much should you drink in danger
+
+### Technologies used
+- Vite
+- Vue 3
+- Tailwind CSS
+- GitHub
+- VSCode
