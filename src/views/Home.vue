@@ -25,10 +25,10 @@
                 >
                 days
             </p>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Calculate</button>
+            <button class="transition bg-blue-500 hover:bg-blue-700 duration-300 text-white font-bold py-2 px-4 rounded ">Calculate</button>
         </div>
 
-        <!-- <WaterCalculations v-if="isDone"></WaterCalculations> -->
+       <!-- <WaterCalculations v-if="isDone"></WaterCalculations> -->
     </div>
 
 </template>
