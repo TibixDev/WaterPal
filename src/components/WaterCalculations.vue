@@ -26,7 +26,6 @@
                 </div>
             </div>
         </fieldset>
-        <hr>
 
         <!-- WATER DATA -->
         <h1>Water Data</h1>
@@ -169,6 +168,6 @@ const series = ref([
 }
 
 h1 {
-    @apply text-3xl font-bold;
+    @apply text-3xl font-bold pt-1;
 }
 </style>
