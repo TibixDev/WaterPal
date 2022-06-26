@@ -7,7 +7,7 @@
             </div>
             <h2 class="text-right italic">Never out of water</h2>
         </div>
-        <div class="border-solid rounded-md drop-shadow-md p-10 bg-white m-2 max-w-screen md:max-w-3xl">
+        <div class="border-solid rounded-md drop-shadow-md px-12 pt-10 pb-2 bg-white m-2 max-w-screen md:max-w-3xl justify-center">
             <div class="flex flex-col items-center" v-if="!isDone">
                 <h1 class="text-center text-3xl font-bold pb-7">Enter your trip details</h1>
                 <div class="flex flex-col sm:flex-row gap-1 justify-center items-center">
@@ -43,8 +43,8 @@
                 
             </div>
             <WaterCalculations :trip-data="tripData" @back="isDone = !isDone" v-if="isDone"></WaterCalculations>
+            <Tip/>
         </div>
-
     </div>
 
 </template>
@@ -52,6 +52,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import WaterCalculations from "../components/WaterCalculations.vue";
+import Tip from "../components/TipOfTheDay.vue";
 
 let isDone = ref(false);
 let tripData = ref({
