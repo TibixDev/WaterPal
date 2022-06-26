@@ -5,7 +5,7 @@
                 <img class="w-20" src="../assets/waterpal.svg" alt="waterpal logo">
                 <h1 class="align-center font-extrabold font-sans antialiased text-5xl sm:text-7xl">WATERPAL</h1>
             </div>
-            <h2 class="text-right italic">Never run out of water</h2>
+            <h2 class="text-right italic">Never out of water</h2>
         </div>
         <div class="border-solid rounded-md drop-shadow-md p-10 bg-white m-2 max-w-screen md:max-w-3xl">
             <div class="flex flex-col items-center" v-if="!isDone">
