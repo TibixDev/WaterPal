@@ -1,9 +1,15 @@
 <template>
-    <div class="text-2xl container mx-auto flex flex-col gap-4 p-2">
+    <div class="text-xl flex flex-col gap-4 p-2">
+        <div>
+            <button
+                class="transition bg-blue-500 hover:bg-blue-700 duration-300 text-white font-bold py-1 px-2 rounded"
+                @click="$emit('back')"
+            >Back</button>
+        </div>
         <fieldset>
-            <legend class="text-3xl font-semibold pb-2">Select your unit:</legend>
+            <legend class="text-2xl font-semibold pb-2">Change your unit:</legend>
 
-            <div class="flex flex-row gap-3 justify-center">
+            <div class="flex flex-row gap-3">
                 <div class="inline-flex flex-row gap-1">
                     <input type="radio" id="liter" value="liter" v-model="currentUnit" checked>
                     <label for="liter">Liter</label>
@@ -20,6 +26,8 @@
                 </div>
             </div>
         </fieldset>
+        <hr>
+        <h1 class="text-2xl font-bold">Water Data</h1>
         <p>
             In order to keep
             <span class="highlight">{{ props.tripData.people }} people</span>
@@ -75,15 +83,17 @@ const props = defineProps({
     },
 })
 
+const emits = defineEmits(["back"])
+
 const converters = {
     liter: (liter) => liter,
-    gallon: (liter) => (liter * 0.26417).toFixed(2),
-    quart: (liter) => (liter * 0.946353).toFixed(2),
+    gallon: (liter) => (liter * 0.26417),
+    quart: (liter) => (liter * 0.946353),
 }
 
 function convert(liter) {
-    const value = converters[currentUnit.value](liter);
-    return value + " " + currentUnit.value + (value > 1 ? "s" : "");
+    const value = Number(converters[currentUnit.value](liter));
+    return value.toFixed(2) + " " + currentUnit.value + (value > 1 ? "s" : "");
 }
 
 function getWater(people, days) {
