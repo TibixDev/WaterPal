@@ -4,7 +4,7 @@
             <img class="w-20" src="../assets/waterpal.svg" alt="waterpal logo">
             <h1 class="align-center font-extrabold font-sans antialiased text-5xl sm:text-7xl">WATERPAL</h1>
         </div>
-        <div class="border-solid rounded-md drop-shadow-md px-12 pt-10 pb-2 bg-white m-2 max-w-screen md:max-w-3xl">
+        <div class="border-solid rounded-md drop-shadow-md px-12 pt-10 pb-2 bg-white m-2 max-w-screen md:max-w-3xl justify-center">
             <div class="flex flex-col items-center" v-if="!isDone">
                 <h1 class="text-center text-2xl font-bold pb-10">Enter your trip details</h1>
                 <div class="flex flex-col sm:flex-row gap-1 justify-center items-center">
@@ -38,9 +38,7 @@
                 
             </div>
             <WaterCalculations :trip-data="tripData" @back="isDone = !isDone" v-if="isDone"></WaterCalculations>
-            <div class="inline-block w-1/2">
-                <Tip/>
-            </div>
+            <Tip/>
         </div>
     </div>
 
